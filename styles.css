@@ -1,0 +1,1188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  width: 100vw;
+}
+
+#watchlist-page {
+  z-index: 1;
+}
+
+#todos-page {
+  z-index: 1;
+}
+
+.card.big {
+  min-height: calc(90vh - 5vh);
+  overflow-y: auto;
+  background-color: #3f3f3f;
+  padding: 0 10% 5% 10%;
+  width: auto;
+  border-radius: 10px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 50px;
+  color: #d6d6d6;
+}
+
+.title-small {
+  font-size: 40px;
+  color: #d6d6d6;
+}
+
+.square-btn-lg:hover {
+  cursor: pointer;
+  background-color: #8b8b8b;
+}
+
+.square-btn-lg {
+  max-height: 60px;
+  padding: 7px;
+  width: auto;
+  background-color: #656565;
+  border-radius: 8px;
+}
+
+.personal {
+  background-color: #c84de7;
+}
+
+.priority-btn {
+  height: 35px;
+  width: 35px;
+}
+
+.priority-btn:hover {
+  cursor: pointer;
+}
+
+.work {
+  background-color: #4d94e7;
+}
+
+.school {
+  background-color: #4de766;
+}
+
+.input {
+  box-sizing: border-box;
+  background-color: #656565;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 15px 5px 15px;
+  color: #d6d6d6;
+  width: 90%;
+}
+
+.input:active {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.input:focus {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.overlap-btn {
+  position: relative;
+  top: -30px;
+}
+
+#todo-list {
+  margin-top: 4%;
+}
+
+.sub-heading {
+  font-size: 27px;
+  color: #d6d6d6;
+}
+
+.priority-text {
+  text-transform: uppercase;
+  color: #d6d6d6;
+  font-weight: bold;
+}
+
+#new-todo label.type:hover {
+  cursor: pointer;
+}
+
+.social {
+  background-color: #b8b644;
+}
+
+.family {
+  background-color: #b84484;
+}
+
+.sports {
+  background-color: #be6b3a;
+}
+
+.other {
+  background-color: #44be8f;
+}
+
+.button {
+  color: #d6d6d6;
+  font-weight: 500;
+  font-size: 25px;
+  background-color: #656565;
+  border: none;
+  border-radius: 7px;
+  padding: 0 10px 3px 10px;
+  width: fit-content;
+  border: 3px solid #656565;
+}
+
+.button:hover {
+  background-color: #8b8b8b;
+  border: 3px solid #8b8b8b;
+}
+
+.button.ghost {
+  border: 3px solid transparent;
+  background-color: #3f3f3f;
+}
+
+.button.ghost:hover {
+  border: 3px solid #656565;
+}
+
+.priority-btn.selected {
+  background-image: url("/images/dot.png");
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 50% 48%;
+}
+
+.type.new-todo {
+  border: 3px solid #3f3f3f;
+}
+
+.type.new-todo.selected {
+  border: 3px solid #d6d6d6;
+}
+
+.edit-input:focus {
+  border: 3px solid #3f3f3f;
+  box-shadow: none;
+  outline: none;
+}
+
+.todo-item .type {
+  margin-top: 7%;
+}
+
+.exit-btn:hover {
+  cursor: pointer;
+}
+
+.trash-btn:hover {
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  cursor: pointer;
+}
+
+.movie-btn {
+  max-height: 50px;
+  width: 50px;
+  padding: 3%;
+  background-color: #656565;
+  margin-left: -10%;
+  border-radius: 10px 0 10px 0;
+  position: absolute;
+}
+
+.movie-btn:hover {
+  cursor: pointer;
+}
+
+.todo-btn {
+  max-height: 50px;
+  width: 50px;
+  padding: 3%;
+  background-color: #656565;
+  margin-left: -10%;
+  border-radius: 10px 0 10px 0;
+  position: absolute;
+}
+
+.todo-btn:hover {
+  cursor: pointer;
+}
+
+.todo-type-div {
+  justify-content: right;
+  padding-right: 5%;
+}
+
+.end-div {
+  float: right;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.line-clamp.two {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+textarea.input {
+  resize: none;
+}
+
+.message-modal {
+  background-color: #302f2f;
+  font-size: 25px;
+  color: #d6d6d6;
+}
+
+#watchlist {
+  margin-top: 5%;
+}
+
+#add-movie-list {
+  margin-top: 5%;
+}
+
+.card.movie-list-item {
+  padding: 2%;
+  padding-right: 0;
+  height: 105px;
+  background-color: #656565;
+  border-radius: 10px;
+  border-style: none;
+  margin-bottom: 4%;
+}
+
+.card.add-movie-list-item {
+  padding: 2%;
+  padding-right: 0;
+  height: 105px;
+  background-color: #656565;
+  border-radius: 10px;
+  border-style: none;
+  margin-bottom: 4%;
+}
+
+.movie-poster-div {
+  margin-left: -2%;
+}
+
+.movie-poster-div img {
+  height: 85px;
+}
+
+label.movie-title {
+  font-size: 20px;
+  color: #d6d6d6;
+}
+
+label.movie-rating-small {
+  font-size: 17px;
+  color: #d6d6d6;
+}
+
+.star-small {
+  height: 20px;
+}
+
+.star-big {
+  height: 30px;
+}
+
+.rating-text {
+  font-size: 22px;
+}
+
+.movie-year {
+  font-size: 19px;
+  color: #d6d6d6;
+}
+
+.movie-duration {
+  font-size: 19px;
+  color: #d6d6d6;
+}
+
+.movie-details-btn {
+  font-size: 12px;
+  color: #d6d6d6;
+  padding: 0% 12% 0% 12%;
+  border: 2px solid #d6d6d6;
+  border-radius: 10px;
+  float: right;
+  margin-right: -10%;
+}
+
+.movie-plot {
+  border: 2px solid #d6d6d6;
+  padding: 3%;
+  border-radius: 10px;
+  color: #d6d6d6;
+}
+
+.movie-genres {
+  font-size: 18px;
+  color: #d6d6d6;
+}
+
+.movie-actors {
+  font-size: 18px;
+  color: #d6d6d6;
+}
+
+.bookmark-icon {
+  height: 30px;
+  float: right;
+  margin-top: 8%;
+}
+
+.bookmark-icon:hover {
+  cursor: pointer;
+}
+
+.search-icon {
+  height: 25px;
+  position: absolute;
+  margin: 1% -6%;
+}
+
+.search-icon:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.display {
+  display: block !important;
+}
+
+/* ----- go through ----- */
+
+.movie-details-modal {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: auto;
+  justify-content: center;
+}
+
+/* ----- go through ----- */
+.card.modal-content {
+  background-color: #3f3f3f !important;
+  padding: 0 4% 3% 4%;
+  width: 75% !important;
+  box-shadow: 8px 4px rgba(0, 0, 0, 0.15);
+  margin: 5% 10%;
+  border-radius: 10px !important;
+}
+
+.close-btn-container {
+  width: 5%;
+  float: right;
+}
+
+.close-btn {
+  position: absolute;
+  transition-duration: 0.4s;
+  margin: 2% 90%;
+  height: 28px;
+}
+
+.close-btn:hover {
+  cursor: pointer;
+}
+
+.close-icon {
+  height: 28px;
+}
+
+.rounded {
+  border-radius: 20px;
+}
+
+.bookmark-icon.filled {
+  content: url(/images/bookmark-filled-icon.png);
+}
+
+.bookmark-icon.unfilled {
+  content: url(/images/bookmark-unfilled-icon.png);
+}
+
+.title-movie-info {
+  font-size: 32px;
+  color: #d6d6d6;
+}
+
+#movie-info-img {
+  padding-top: 15%;
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 1600px) {
+  .body {
+    background-color: #302f2f;
+    padding: 3% 0 0 0;
+    overflow-x: hidden;
+  }
+
+  #todos-page {
+    margin-right: 5%;
+  }
+
+  #add-movie-page {
+    margin-right: 5%;
+  }
+
+  label.type {
+    font-size: 12px;
+    font-weight: bold;
+    color: #d6d6d6;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 14px;
+    padding: 0 5px 0 5px;
+    width: 90px;
+  }
+
+  .card.todo-list-item label.text {
+    font-size: 22px;
+    color: #d6d6d6;
+  }
+
+  .edit-btn {
+    height: 30px;
+    width: 30px;
+  }
+
+  .save-btn {
+    margin-top: 3px;
+    max-height: 27px;
+    width: auto;
+  }
+
+  .trash-btn {
+    height: 30px;
+    width: 30px;
+  }
+
+  .exit-btn {
+    margin-top: 3px;
+    max-height: 27px;
+    width: auto;
+  }
+
+  .edit-input {
+    background-color: #3f3f3f;
+    border: 3px solid #3f3f3f;
+    border-radius: 5px;
+    padding: 1% 3% 1% 3%;
+    color: #d6d6d6;
+    font-size: 22px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  textarea.edit-input {
+    margin-top: 5%;
+    background-color: #3f3f3f;
+    border: 3px solid #3f3f3f;
+    border-radius: 5px;
+    padding: 1% 3% 1% 3%;
+    color: #d6d6d6;
+    font-size: 16px;
+    margin-bottom: 20px;
+    width: 84%;
+    resize: none;
+  }
+
+  .end-div {
+    margin-top: 1%;
+  }
+
+  .card.todo-list-item {
+    background-color: #656565;
+    height: 72px;
+    margin: 0 0 5% 0;
+    border-radius: 10px;
+    border-style: none;
+  }
+
+  .description-div {
+    padding: 3% 15% 1% 12%;
+    height: fit-content;
+    background-color: #656565;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    margin-top: -9%;
+    border-style: none;
+    color: #d6d6d6;
+  }
+
+  .description-text {
+    font-size: 18px;
+  }
+
+  .edit-priority-div {
+    margin-top: -2%;
+    margin-left: -2%;
+    border: 3px solid #3f3f3f;
+    padding: 3px;
+    border-radius: 5px;
+  }
+
+  .movie-btn {
+    display: none !important;
+  }
+
+  .todo-btn {
+    display: none !important;
+  }
+
+  .priority-div {
+    margin-top: 4% !important;
+  }
+
+  .task-div {
+    margin-top: 4% !important;
+    padding-left: 4% !important;
+  }
+
+  .todo-type-div {
+    justify-content: right;
+    padding-right: 8%;
+  }
+
+  .edit-delete-div {
+    justify-content: right;
+    padding-right: 10%;
+  }
+
+  #todos-page {
+    display: block;
+  }
+
+  #watchlist-page {
+    display: block;
+  }
+
+  .adjust-display {
+    display: block !important;
+  }
+
+  #movie-info-dot {
+    margin-left: 2%;
+  }
+
+  .movie-duration {
+    margin-left: 2%;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  label.type {
+    font-size: 10px;
+    width: 77px;
+  }
+
+  .todo-type-div {
+    padding-right: 12px;
+  }
+
+  .task-div {
+    margin-left: 2%;
+  }
+
+  #todos-page {
+    display: block;
+  }
+
+  #watchlist-page {
+    display: block;
+  }
+
+  .description-text {
+    margin-left: 3%;
+  }
+
+  .adjust-display {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .card.todo-list-item label.text {
+    font-size: 20px;
+  }
+
+  .description-text {
+    font-size: 17px;
+  }
+
+  .adjust-display {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .movie-details-btn {
+    font-size: 10px;
+  }
+
+  .search-icon {
+    margin: 1% -7%;
+  }
+
+  .adjust-display {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  label.type {
+    font-size: 9px;
+    width: 63px;
+  }
+  .card.todo-list-item label.text {
+    font-size: 19px;
+    color: #d6d6d6;
+    margin: 1% 0 0 10px;
+    overflow-x: auto;
+  }
+
+  .description-text {
+    font-size: 16px;
+    margin-left: 7%;
+  }
+
+  .edit-btn {
+    max-height: 25px;
+    width: auto;
+  }
+
+  .save-btn {
+    margin-top: 3px;
+    max-height: 22px;
+    width: auto;
+  }
+
+  .trash-btn {
+    max-height: 25px;
+    width: auto;
+  }
+
+  .exit-btn {
+    margin-top: 3px;
+    max-height: 22px;
+    width: auto;
+  }
+
+  .edit-input {
+    background-color: #3f3f3f;
+    border: 3px solid #3f3f3f;
+    border-radius: 5px;
+    padding: 1% 3% 1% 3%;
+    color: #d6d6d6;
+    font-size: 19px;
+    width: 100%;
+    margin: 1% 0 0 10px;
+  }
+
+  textarea.edit-input {
+    font-size: 16px;
+    resize: none;
+  }
+
+  .card.todo-list-item {
+    background-color: #656565;
+    padding-bottom: 3%;
+    height: 62px;
+    margin: 0 0 4% 0;
+    border-radius: 8px;
+  }
+
+  .edit-priority-div {
+    margin-top: -3%;
+    margin-left: 2%;
+    border: 3px solid #3f3f3f;
+    padding: 3px;
+    border-radius: 5px;
+    width: fit-content;
+  }
+
+  #todos-page {
+    display: block;
+  }
+
+  #watchlist-page {
+    display: block;
+  }
+
+  .movie-details-btn {
+    font-size: 9px;
+  }
+
+  .adjust-display {
+    display: block !important;
+  }
+
+  #movie-info-dot {
+    margin-left: 3%;
+  }
+
+  .movie-duration {
+    margin-left: 3%;
+  }
+
+  .close-btn {
+    margin: 2% 88%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  #div-container {
+    display: flex;
+    flex-flow: column;
+  }
+  .movie-details-modal {
+    order: 1;
+  }
+
+  #todos-page {
+    align-self: center;
+    order: 2;
+  }
+  #watchlist-page {
+    align-self: center;
+    order: 3;
+  }
+  #new-todo-page {
+    align-self: center;
+    order: 4;
+  }
+  #add-movie-page {
+    align-self: center;
+    order: 5;
+  }
+
+  .body {
+    background-color: #302f2f;
+    padding: 3%;
+    overflow-x: hidden;
+  }
+
+  #todos-page {
+    margin-right: 0;
+  }
+
+  label.type {
+    font-size: 10px;
+    width: 65px;
+  }
+
+  .type.new-todo {
+    width: 70px;
+  }
+
+  .card.todo-list-item label.text {
+    font-size: 22px;
+    margin-top: -1%;
+  }
+
+  .description-text {
+    font-size: 18px;
+    margin-left: 0;
+  }
+
+  #watchlist-page {
+    display: none;
+  }
+
+  .movie-btn {
+    padding: 1%;
+    display: block !important;
+  }
+
+  .todo-btn {
+    padding: 1%;
+    display: block !important;
+  }
+
+  #new-todo-page {
+    margin-bottom: 8%;
+  }
+
+  .priority-div {
+    margin-top: 2% !important;
+    margin-right: 0 !important;
+  }
+
+  .task-div {
+    margin-top: 2% !important;
+    padding-left: 0 !important;
+    margin-left: -2% !important;
+  }
+
+  .edit-priority-div {
+    margin-top: -2%;
+    margin-left: 2%;
+  }
+
+  .edit-delete-div {
+    padding-left: 20%;
+  }
+
+  #todos-page {
+    display: block;
+  }
+
+  .todo-type-div {
+    padding-right: 0;
+  }
+
+  .title-small {
+    font-size: 35px;
+    color: #d6d6d6;
+  }
+
+  .sub-heading {
+    font-size: 24px;
+  }
+
+  .description-div {
+    padding-top: 5%;
+  }
+
+  .movie-details-btn {
+    font-size: 12px;
+  }
+
+  .search-icon {
+    margin: 5px -6%;
+  }
+
+  .adjust-display {
+    display: none !important;
+  }
+
+  .close-btn {
+    margin: 2% 87%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .priority-div {
+    margin-top: 3% !important;
+  }
+  .task-div {
+    margin-top: 3% !important;
+    padding-left: 1% !important;
+  }
+
+  .card.todo-list-item label.text {
+    margin-top: 1%;
+    font-size: 20px;
+  }
+
+  .edit-delete-div {
+    padding-left: 0;
+    margin: 0;
+  }
+  .edit-priority-div {
+    margin-left: 2%;
+  }
+
+  .adjust-display {
+    display: none !important;
+  }
+
+  #movie-info-dot {
+    margin-left: 4%;
+  }
+
+  .movie-duration {
+    margin-left: 4%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .edit-btn {
+    height: 22px;
+  }
+
+  .trash-btn {
+    height: 22px;
+  }
+
+  .save-btn {
+    height: 20px;
+  }
+
+  .exit-btn {
+    height: 20px;
+  }
+
+  .movie-btn {
+    padding: 2%;
+    display: block !important;
+  }
+
+  .todo-btn {
+    padding: 2%;
+    display: block !important;
+  }
+
+  .task-div {
+    margin-top: 3% !important;
+    padding-left: 3% !important;
+  }
+
+  .edit-priority-div {
+    margin-left: 2%;
+  }
+
+  .description-text {
+    margin-left: 5%;
+  }
+
+  .adjust-display {
+    display: none !important;
+  }
+
+  .close-btn {
+    margin: 4% 84%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .todo-type-div {
+    margin-bottom: 0;
+  }
+  .movie-btn {
+    padding: 2%;
+    display: block !important;
+  }
+
+  .todo-btn {
+    padding: 2%;
+    display: block !important;
+  }
+
+  .priority-div {
+    margin-top: 4% !important;
+  }
+
+  .task-div {
+    margin-top: 3% !important;
+    padding-left: 3% !important;
+  }
+
+  .priority-btn {
+    max-height: 25px;
+    width: auto;
+  }
+
+  label.type {
+    font-size: 10px;
+  }
+
+  .priority-btn.selected {
+    background-image: url("/images/dot.png");
+    background-size: 8px;
+    background-repeat: no-repeat;
+    background-position: 49% 49%;
+  }
+
+  .search-icon {
+    margin: 1% -8%;
+  }
+
+  .adjust-display {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .edit-delete-div {
+    padding-left: 20%;
+  }
+  .priority-text {
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 40px;
+    color: #d6d6d6;
+  }
+
+  .sub-heading {
+    font-size: 20px;
+  }
+
+  .edit-priority-div {
+    margin-left: 2%;
+  }
+
+  .movie-btn {
+    padding: 2%;
+    display: block !important;
+  }
+
+  .todo-btn {
+    padding: 2%;
+    display: block !important;
+  }
+
+  .adjust-display {
+    display: none !important;
+  }
+
+  #movie-info-dot {
+    margin-left: 7%;
+  }
+
+  .movie-duration {
+    margin-left: 7%;
+  }
+
+  .close-btn {
+    margin: 6% 81%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  label.type {
+    font-size: 9px;
+  }
+
+  .edit-delete-div {
+    padding-left: 0;
+  }
+
+  .edit-priority-div {
+    margin-left: 2%;
+  }
+  .search-icon {
+    height: 22px;
+    margin: 6px -9%;
+  }
+
+  .movie-btn {
+    padding: 2%;
+    display: block !important;
+  }
+
+  .todo-btn {
+    padding: 2%;
+    display: block !important;
+  }
+
+  .adjust-display {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .movie-btn {
+    padding: 3%;
+    display: block !important;
+  }
+
+  .todo-btn {
+    padding: 3%;
+    display: block !important;
+  }
+
+  .priority-div {
+    margin-top: 6% !important;
+  }
+
+  .task-div {
+    margin-top: 5% !important;
+    padding-left: 8% !important;
+  }
+
+  .card.todo-list-item label.text {
+    font-size: 18px;
+  }
+
+  .description-text {
+    font-size: 15px;
+  }
+
+  .edit-btn {
+    height: 20px;
+  }
+
+  .trash-btn {
+    height: 20px;
+  }
+
+  .save-btn {
+    height: 18px;
+  }
+
+  .exit-btn {
+    height: 18px;
+  }
+  .edit-priority-div {
+    margin-left: -5%;
+  }
+  .search-icon {
+    margin: 6px -10%;
+  }
+
+  .adjust-display {
+    display: none !important;
+  }
+
+  #movie-info-dot {
+    margin-left: 8%;
+  }
+
+  .movie-duration {
+    margin-left: 8%;
+  }
+
+  .close-btn {
+    margin: 7% 77%;
+  }
+}

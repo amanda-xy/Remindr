@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Remindr</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="body">
+    <div>
+      <div id="div-container" class="row justify-content-center">
+        <div class="movie-details-modal hidden">
+          <div class="card modal-content">
+            <div class="row">
+              <div class="close-btn-container">
+                <img src="/images/close-icon.png" alt="Close" class="close-btn" />
+              </div>
+              <div id="movie-info-div" class="col-lg-4 col-11">
+                <img class="col-lg-12 col-3" id="movie-info-img" src="" alt="" />
+              </div>
+              <div class="col-lg-8 col-11">
+                <div class="col-12" style="height: fit-content">
+                  <div>
+                    <label class="title-movie-info" style="margin-bottom: 0; margin-top: 15px; font-weight: normal"></label>
+                  </div>
+                  <div class="row">
+                    <label class="movie-rating-small" style="margin-top: -1%"
+                      ><span><img style="margin-top: -2%" class="star-big" src="/images/star.png" alt="" /></span><span class="rating-text"></span
+                    ></label>
+                  </div>
+                  <div class="row d-flex flex-row">
+                    <div class="col-9 d-flex flex-row">
+                      <label class="movie-year"></label>
+                      <label id="movie-info-dot">
+                        <span style="font-size: 7px"><i style="color: #d6d6d6" class="fas fa-circle fa-xs"></i></span>
+                      </label>
+                      <label class="movie-duration"></label>
+                    </div>
+                  </div>
+                </div>
+                <div id="movie-info" class="col-12">
+                  <div style="margin-top: 3%">
+                    <p class="movie-plot"></p>
+                  </div>
+                  <div>
+                    <label class="movie-genres">Genres: <span class="movie-genres"></span></label>
+                  </div>
+                  <div style="margin-top: 2%">
+                    <label class="movie-actors">Actors: <span class="movie-actors"></span></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="todos-page" class="col-lg-5 col-sm-11 col-11">
+          <div class="card big" id="todo">
+            <div class="row text-center">
+              <div class="col-2">
+                <img class="movie-btn" src="/images/movie-icon.png" alt="" />
+              </div>
+              <div class="col-lg-12 col-sm-12 col-9 row text-center" style="padding-top: 2%">
+                <label class="title">Todo</label>
+              </div>
+            </div>
+            <div class="row">
+              <ul id="todo-list" style="list-style-type: none">
+                <!-- <li class="card todo-item">
+                  <div class="row" style="margin-left: 1%">
+                    <div class="col-1" style="margin-top: 4%">
+                      <img class="priority-icon highest-priority" src="/images/highest-priority-icon.png" alt="" />
+                    </div>
+                    <div class="col-8" style="margin-top: 4%; padding-left: 4%">
+                      <label class="text task">Walk the dog</label>
+                    </div>
+                    <div class="col-2" style="margin-top: 1%">
+                      <label class="type personal">personal</label>
+                      <div class="row" style="padding-top: 5%; margin-left: 1%">
+                        <div class="col-6">
+                          <img class="edit-btn" src="/images/edit-icon.png" alt="" />
+                        </div>
+                        <div class="col-6">
+                          <img class="trash-btn" src="/images/trash-icon.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+          <div class="overlap-btn d-flex justify-content-center align-items-end">
+            <img id="add-todo-btn" class="square-btn-lg" src="/images/plus-icon.png" alt="" />
+          </div>
+        </div>
+        <div id="add-movie-page" class="col-lg-5 col-sm-11 col-11 hidden">
+          <div class="card big" id="add-movie">
+            <div class="col-12 row text-center" style="padding-top: 2%">
+              <label class="title-small">Add Movie</label>
+            </div>
+            <div class="row justify-content-center" style="margin-top: 3%">
+              <div class="col-10" style="padding-left: 48px">
+                <input id="add-movie-search-input" type="text" class="input" />
+                <img id="add-movie-search-btn" src="/images/search-icon.png" alt="" class="search-icon" />
+              </div>
+              <div></div>
+            </div>
+            <div class="row">
+              <ul id="add-movie-list" style="list-style-type: none"></ul>
+            </div>
+            <div style="align-self: center; position: absolute; bottom: 0; margin-bottom: 4%">
+              <button id="close-add-movie-page" class="button ghost">Cancel</button>
+            </div>
+          </div>
+        </div>
+        <div id="watchlist-page" class="col-lg-5 col-sm-11 col-11">
+          <div class="card big" id="movies">
+            <div class="col-2">
+              <img class="todo-btn" src="/images/todo-icon.png" alt="" />
+            </div>
+            <div class="col-lg-12 col-sm-12 col-9 row text-center" style="padding-top: 2%">
+              <label class="title">Watchlist</label>
+            </div>
+            <div class="row justify-content-center" style="margin-top: 3%">
+              <div class="col-10" style="padding-left: 48px">
+                <input type="text" class="input" />
+                <img src="/images/search-icon.png" alt="" class="search-icon" />
+              </div>
+            </div>
+            <div class="row">
+              <ul id="watchlist" style="list-style-type: none">
+                <!-- <li class="watchlist-item">
+                  <div class="card movie-list-item row d-flex flex-row">
+                    <div class="col-2 movie-poster-div">
+                      <img src="/images/thelastduel.jpg" alt="" />
+                    </div>
+                    <div class="col-7 movie-info-short-div">
+                      <div class="row">
+                        <label class="movie-title">The Last Duel</label>
+                      </div>
+                      <div class="row">
+                        <label class="movie-rating-small" style="margin-top: 2px"
+                          ><span><img style="margin-top: -2%" class="star-small" src="/images/star.png" alt="" /></span>7.6</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-3 d-flex flex-column">
+                      <div class="col-12">
+                        <label class="movie-details-btn clickable">View details</label>
+                      </div>
+                      <div class="col-12">
+                        <img src="/images/bookmark-filled-icon.png" alt="" class="bookmark-icon" />
+                      </div>
+                    </div>
+                  </div>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+          <div class="overlap-btn d-flex justify-content-center align-items-end">
+            <img id="add-movie-btn" class="square-btn-lg" src="/images/plus-icon.png" alt="" />
+          </div>
+        </div>
+        <div id="new-todo-page" class="col-lg-5 col-sm-11 col-11 hidden">
+          <div class="card big" id="new-todo">
+            <div class="col-12 row text-center" style="padding-top: 2%">
+              <label class="title-small">New todo</label>
+            </div>
+            <div class="col-10" style="margin-top: 2%">
+              <label class="sub-heading col-12" for="new-todo-task-input">Task</label>
+              <input id="new-todo-task-input" type="text" class="input" />
+            </div>
+            <div class="col-10" style="margin-top: 2%">
+              <label class="sub-heading col-12" for="new-todo-description-input">Description</label>
+              <textarea id="new-todo-description-input" class="input" type="text" rows="3"></textarea>
+            </div>
+            <div class="col-12" style="padding-top: 2%">
+              <label class="sub-heading">Priority</label>
+              <div class="row" style="margin-top: 2%" id="new-todo-priority-btns">
+                <div class="col-3 d-flex justify-content-center">
+                  <div>
+                    <img
+                      name="highest-priority"
+                      class="priority-icon highest-priority priority-btn"
+                      style="margin-left: 20%"
+                      src="/images/highest-priority-icon.png"
+                      alt=""
+                    />
+                    <br />
+                    <label class="priority-text">highest</label>
+                  </div>
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                  <div>
+                    <img name="high-priority" class="priority-icon high-priority priority-btn" style="margin-left: 2%" src="/images/high-priority-icon.png" alt="" />
+                    <br />
+                    <label class="priority-text">high</label>
+                  </div>
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                  <div>
+                    <img
+                      name="medium-priority"
+                      class="priority-icon medium-priority priority-btn"
+                      style="margin-left: 20%"
+                      src="/images/medium-priority-icon.png"
+                      alt=""
+                    />
+                    <br />
+                    <label class="priority-text">medium</label>
+                  </div>
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                  <div>
+                    <img name="low-priority" class="priority-icon low-priority priority-btn" src="/images/low-priority-icon.png" alt="" />
+                    <br />
+                    <label class="priority-text">low</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12" style="margin-top: 4%">
+              <label class="sub-heading">Type</label>
+              <div style="margin-top: 2%">
+                <label id="personal" class="type personal new-todo" style="margin-right: 1%">personal</label>
+                <label id="school" class="type school new-todo" style="margin-right: 1%">school</label>
+                <label id="work" class="type work new-todo" style="margin-right: 1%">work</label>
+                <label id="social" class="type social new-todo" style="margin-right: 1%">social</label>
+                <label id="family" class="type family new-todo" style="margin-right: 1%">family</label>
+                <label id="sports" class="type sports new-todo" style="margin-right: 1%">sports</label>
+                <label id="other" class="type other new-todo" style="margin-right: 1%">other</label>
+              </div>
+            </div>
+            <div style="align-self: center; position: absolute; bottom: 0; margin-bottom: 4%">
+              <button id="new-todo-save-btn" class="button">Save</button>
+              <button id="new-todo-cancel-btn" class="button ghost">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://kit.fontawesome.com/37ac5194c2.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
