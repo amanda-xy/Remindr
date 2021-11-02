@@ -2,6 +2,7 @@
 
 const movieBtn = document.querySelector('.movie-btn');
 const todoBtn = document.querySelector('.todo-btn');
+const alertModal = document.querySelector('.alert-modal');
 
 // Todos
 const todoList = document.getElementById('todo-list');
@@ -27,9 +28,9 @@ const watchlist = document.getElementById('watchlist');
 const addMoviePage = document.getElementById('add-movie-page');
 const addMovieSearchBtn = document.getElementById('add-movie-search-btn');
 const addMovieList = document.getElementById('add-movie-list');
-const modal = document.querySelector('.movie-details-modal');
-const modalContent = document.querySelector('.modal-content'); 
-const closeModalButton = document.querySelector('.close-btn');
+const movieModal = document.querySelector('.movie-details-modal');
+const modalContent = document.querySelector('.movie-details-modal-content'); 
+const closeModalButton = modalContent.querySelector('.close-btn');
 const closeAddMovieBtn = document.getElementById('close-add-movie-page');
 
 
@@ -58,11 +59,18 @@ watchlistPage.addEventListener('click', watchlistPageClicked);
 addMoviePage.addEventListener('click', addMoviePageClicked);
 
 // Modal
-modal.addEventListener('click', modalClicked);
+movieModal.addEventListener('click', movieModalClicked);
+alertModal.addEventListener('click', alertModalClicked);
 
 
 
 // Functions
+
+function modalAlert(message) {
+    alertModal.classList.remove('hidden');
+    const messagePara = alertModal.querySelector('#message-para');
+    messagePara.innerText = message;
+}
 
 function movieBtnClicked() {
     const gotWatchList = getWatchlistPage();
@@ -97,7 +105,7 @@ function todoBtnClicked() {
 function getNewTodoPage() {
     if (editingTodos())
     {
-        alert('Please save todo changes first');
+        modalAlert('Please save todo changes first');
     } else {
         todosPage.classList.remove('adjust-display');
         todosPage.classList.remove('display');
@@ -164,15 +172,15 @@ function createNewTodo() {
     const description = document.getElementById('new-todo-description-input');
 
     if (task.value === '' || !task.value.trim()) {
-        alert('Please enter a task!');
+        modalAlert('Please enter a task!');
         return;
     } 
     if (!selectedPriority) {
-        alert('Please select a priority for your todo');
+        modalAlert('Please select a priority for your todo');
         return;
     }
     if (!selectedType) {
-        alert('Please select a type for your todo');
+        modalAlert('Please select a type for your todo');
         return;
     }
     
@@ -423,7 +431,6 @@ function todoClicked(e) {
         todo = todo.parentElement;
     }
     
-    console.log(target);
     if (target.classList.contains('edit-btn')) {
         editTodo(todo);
 
@@ -700,7 +707,6 @@ function deleteTodo(todo) {
 function todoFinished(todo, btn) {
     const priorityType = btn.name;
     btn.src = `/images/finished-${priorityType}-icon.png`;
-    console.log(btn.alt);
     btn.alt += ' finished'
     btn.classList.add('finished');
     todo.classList.add('finished');
@@ -712,7 +718,6 @@ function todoFinished(todo, btn) {
 
 function todoNotFinished(todo) {
     const priorityBtn = todo.getElementsByClassName('priority-btn finished')[0];
-    // console.log(priorityBtn);
     const priorityType = priorityBtn.name;
     priorityBtn.src = `/images/${priorityType}-icon.png`;
     priorityBtn.alt = priorityBtn.alt.replace(' finished', '');
@@ -724,7 +729,7 @@ function todoNotFinished(todo) {
 // Watchlist 
 function getWatchlistPage() {
     if (editingTodos() || newTodoPage.style.display === 'block') {
-        alert('Please save todo changes first');
+        modalAlert('Please save todo changes first');
         return false;
     } else {
         return true;
@@ -733,7 +738,7 @@ function getWatchlistPage() {
 
 function getAddMoviePage() {
     if (editingTodos()) {
-        alert('Please save todo changes first');
+        modalAlert('Please save todo changes first');
         return false;
     } else {
         todosPage.classList.remove('display');
@@ -861,7 +866,6 @@ async function addMovieSearch() {
         let data = res.data;
         const li = document.createElement('li');
         li.classList = 'add-movie-item';
-        console.log(data);
         li.innerHTML = `
         <div class = "card add-movie-list-item row d-flex flex-row">
             <div class="col-2 movie-poster-div">
@@ -953,17 +957,25 @@ async function openModal(movieTitle) {
 
 
 
-    toggleModal();
+    toggleModal(movieModal);
 }
   
-function toggleModal() {
-modal.classList.toggle('hidden');
+function toggleModal(modalToToggle) {
+    console.log(modalToToggle);
+    modalToToggle.classList.toggle('hidden');
 }
 
-function modalClicked(e) {
+function movieModalClicked(e) {
     const target = e.target;
-    if (target === closeModalButton || target === modal) {
-        toggleModal();
+    if (target === closeModalButton || target === movieModal) {
+        toggleModal(movieModal);
+    }
+}
+
+function alertModalClicked(e) {
+    const target = e.target;
+    if (target === alertModal) {
+        toggleModal(alertModal);
     }
 }
 

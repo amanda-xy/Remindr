@@ -17,7 +17,7 @@
     <div>
       <div id="div-container" class="row justify-content-center">
         <div class="movie-details-modal hidden">
-          <div class="card modal-content">
+          <div class="card movie-details-modal-content">
             <div class="row">
               <div class="close-btn-container">
                 <img src="/images/close-icon.png" alt="Close" class="close-btn" />
@@ -58,6 +58,11 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="alert-modal hidden">
+          <div class="card alert-modal-content text-center">
+            <p id="message-para"></p>
           </div>
         </div>
         <div id="todos-page" class="col-lg-5 col-sm-11 col-11">
@@ -106,7 +111,7 @@
               <label class="title-small">Add Movie</label>
             </div>
             <div class="row justify-content-center" style="margin-top: 3%">
-              <div class="col-10" style="padding-left: 48px">
+              <div class="col-lg-11 col-sm-11 col-11" style="padding-left: 48px">
                 <input id="add-movie-search-input" type="text" class="input" />
                 <img id="add-movie-search-btn" src="/images/search-icon.png" alt="" class="search-icon" />
               </div>
@@ -125,14 +130,8 @@
             <div class="col-2">
               <img class="todo-btn" src="/images/todo-icon.png" alt="" />
             </div>
-            <div class="col-lg-12 col-sm-12 col-9 row text-center" style="padding-top: 2%">
+            <div class="col-lg-12 col-sm-12 col-12 row text-center" style="padding-top: 2%">
               <label class="title">Watchlist</label>
-            </div>
-            <div class="row justify-content-center" style="margin-top: 3%">
-              <div class="col-10" style="padding-left: 48px">
-                <input type="text" class="input" />
-                <img src="/images/search-icon.png" alt="" class="search-icon" />
-              </div>
             </div>
             <div class="row">
               <ul id="watchlist" style="list-style-type: none">
