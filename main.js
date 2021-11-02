@@ -89,15 +89,20 @@ function movieBtnClicked() {
 }
 
 function todoBtnClicked() {
-    todoBtn.setAttribute('style', 'display:none');
-    movieBtn.setAttribute('style', 'display:block');
 
-    todosPage.classList.remove('display');
-    todosPage.classList.remove('adjust-display');
-    todosPage.classList.add('display');
-    watchlistPage.classList.remove('display');
-    watchlistPage.classList.remove('adjust-display');
-    watchlistPage.classList.add('adjust-display');
+    if (addMoviePage.classList.contains('display')) {
+        modalAlert('Please close add movie page first');
+    } else {
+        todoBtn.setAttribute('style', 'display:none');
+        movieBtn.setAttribute('style', 'display:block');
+    
+        todosPage.classList.remove('display');
+        todosPage.classList.remove('adjust-display');
+        todosPage.classList.add('display');
+        watchlistPage.classList.remove('display');
+        watchlistPage.classList.remove('adjust-display');
+        watchlistPage.classList.add('adjust-display');
+    }
 }
 
 // New Todo
@@ -728,7 +733,7 @@ function todoNotFinished(todo) {
 
 // Watchlist 
 function getWatchlistPage() {
-    if (editingTodos() || newTodoPage.style.display === 'block') {
+    if (editingTodos() || newTodoPage.classList.contains('display')) {
         modalAlert('Please save todo changes first');
         return false;
     } else {
@@ -759,26 +764,26 @@ async function addMovieToWatchlist(title) {
     li.classList = 'watchlist-item';
     li.innerHTML = `
     <div class="card movie-list-item row d-flex flex-row">
-        <div class="col-2 movie-poster-div">
+        <div class="col-lg-2 col-sm-2 col-3 movie-poster-div">
         <img src="${data.Poster}" alt="" />
         </div>
-        <div class="col-7 movie-info-short-div">
-        <div class="row">
-            <label class="movie-title line-clamp two">${data.Title}</label>
+        <div class="col-lg-7 col-sm-7 col-6 movie-info-short-div">
+            <div class="row">
+                <label class="movie-title line-clamp two">${data.Title}</label>
+            </div>
+            <div class="row">
+                <label class="movie-rating-small" style="margin-top: 2px"
+                ><span><img style="margin-top: -2%" class="star-small" src="/images/star.png" alt="" /></span>${data.imdbRating}</label
+                >
+            </div>
         </div>
-        <div class="row">
-            <label class="movie-rating-small" style="margin-top: 2px"
-            ><span><img style="margin-top: -2%" class="star-small" src="/images/star.png" alt="" /></span>${data.imdbRating}</label
-            >
-        </div>
-        </div>
-        <div class="col-3 d-flex flex-column">
-        <div class="col-12">
-            <label class="movie-details-btn clickable">View details</label>
-        </div>
-        <div class="col-12">
-            <img src="/images/bookmark-filled-icon.png" alt="" class="bookmark-icon filled" />
-        </div>
+        <div class="col-3 d-flex flex-column" style="padding-left:0">
+            <div class="col-12">
+                <label class="movie-details-btn clickable">View details</label>
+            </div>
+            <div class="col-12">
+                <img src="/images/bookmark-filled-icon.png" alt="" class="bookmark-icon filled" />
+            </div>
         </div>
     </div>`;
     watchlist.appendChild(li);
@@ -868,10 +873,10 @@ async function addMovieSearch() {
         li.classList = 'add-movie-item';
         li.innerHTML = `
         <div class = "card add-movie-list-item row d-flex flex-row">
-            <div class="col-2 movie-poster-div">
+            <div class="col-lg-2 col-sm-2 col-3 movie-poster-div">
                 <img src="${data.Poster}" alt="" />
             </div>
-            <div class="col-7 movie-info-short-div">
+            <div class="col-lg-7 col-sm-7 col-6 movie-info-short-div">
                 <div class="row">
                     <label class="movie-title line-clamp two">${data.Title}</label>
                 </div>
@@ -879,7 +884,7 @@ async function addMovieSearch() {
                     <label class="movie-rating-small" style="margin-top: 2px"><span><img style="margin-top: -2%" class="star-small" src="/images/star.png" alt="" /></span>${data.imdbRating}</label>
                 </div>
             </div>
-            <div class="col-3 d-flex flex-column">
+            <div class="col-3 d-flex flex-column" style="padding-left:0">
                 <div class="col-12">
                     <label class="movie-details-btn clickable">View details</label>
                 </div>

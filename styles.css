@@ -299,7 +299,7 @@ textarea.input {
 }
 
 label.movie-title {
-  font-size: 20px;
+  font-size: 20px !important;
   color: #d6d6d6;
 }
 
@@ -484,7 +484,7 @@ label.movie-rating-small {
   }
 
   #add-movie-page {
-    margin-right: 5%;
+    margin-right: 5% !important;
   }
 
   label.type {
@@ -790,6 +790,10 @@ label.movie-rating-small {
   .close-btn {
     margin: 2% 88%;
   }
+
+  #add-movie-page {
+    margin-right: 5% !important;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -815,6 +819,7 @@ label.movie-rating-small {
   }
   #add-movie-page {
     align-self: center;
+    margin-right: 0 !important;
     order: 5;
   }
 
@@ -1131,6 +1136,14 @@ label.movie-rating-small {
   .close-btn {
     margin: 6% 81%;
   }
+
+  .movie-details-btn {
+    font-size: 10px;
+  }
+
+  .movie-title {
+    font-size: 17px !important;
+  }
 }
 
 @media only screen and (max-width: 450px) {
@@ -1162,6 +1175,14 @@ label.movie-rating-small {
 
   .adjust-display {
     display: none !important;
+  }
+
+  .movie-details-btn {
+    font-size: 9px;
+  }
+
+  .movie-title {
+    font-size: 14px !important;
   }
 }
 
@@ -1229,5 +1250,9 @@ label.movie-rating-small {
 
   .close-btn {
     margin: 7% 77%;
+  }
+
+  .movie-details-btn {
+    font-size: 8px;
   }
 }
