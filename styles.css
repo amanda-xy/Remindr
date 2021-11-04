@@ -472,13 +472,171 @@ label.movie-rating-small {
   max-width: 100%;
 }
 
-@media only screen and (max-width: 1600px) {
-  .body {
-    background-color: #302f2f;
-    padding: 3% 0 0 0;
-    overflow-x: hidden;
-  }
+.body {
+  background-color: #302f2f;
+  padding: 3% 0 0 0;
+  overflow-x: hidden;
+}
 
+#todos-page {
+  margin-right: 5%;
+}
+
+#add-movie-page {
+  margin-right: 5% !important;
+}
+
+label.type {
+  font-size: 12px;
+  font-weight: bold;
+  color: #d6d6d6;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 14px;
+  padding: 0 5px 0 5px;
+  width: 90px;
+}
+
+.card.todo-list-item label.text {
+  font-size: 22px;
+  color: #d6d6d6;
+}
+
+.edit-btn {
+  height: 30px;
+  width: 30px;
+}
+
+.save-btn {
+  margin-top: 3px;
+  max-height: 27px;
+  width: auto;
+}
+
+.trash-btn {
+  height: 30px;
+  width: 30px;
+}
+
+.exit-btn {
+  margin-top: 3px;
+  max-height: 27px;
+  width: auto;
+}
+
+.edit-input {
+  background-color: #3f3f3f;
+  border: 3px solid #3f3f3f;
+  border-radius: 5px;
+  padding: 1% 3% 1% 3%;
+  color: #d6d6d6;
+  font-size: 22px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+textarea.edit-input {
+  margin-top: 5%;
+  background-color: #3f3f3f;
+  border: 3px solid #3f3f3f;
+  border-radius: 5px;
+  padding: 1% 3% 1% 3%;
+  color: #d6d6d6;
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 84%;
+  resize: none;
+}
+
+.end-div {
+  margin-top: 1%;
+}
+
+.card.todo-list-item {
+  background-color: #656565;
+  height: 72px;
+  margin: 0 0 5% 0;
+  border-radius: 10px;
+  border-style: none;
+}
+
+.description-div {
+  padding: 3% 15% 1% 12%;
+  height: fit-content;
+  background-color: #656565;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  margin-top: -9%;
+  border-style: none;
+  color: #d6d6d6;
+}
+
+.description-text {
+  font-size: 18px;
+}
+
+.edit-priority-div {
+  margin-top: -2%;
+  margin-left: -2%;
+  border: 3px solid #3f3f3f;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.movie-btn {
+  display: none !important;
+}
+
+.todo-btn {
+  display: none !important;
+}
+
+.priority-div {
+  margin-top: 4% !important;
+}
+
+.task-div {
+  margin-top: 4% !important;
+  padding-left: 4% !important;
+}
+
+.todo-type-div {
+  justify-content: right;
+  padding-right: 8%;
+}
+
+.edit-delete-div {
+  justify-content: right;
+  padding-right: 10%;
+}
+
+#todos-page {
+  display: block;
+}
+
+#watchlist-page {
+  display: block;
+}
+
+.adjust-display {
+  display: block !important;
+}
+
+#movie-info-dot {
+  margin-left: 2%;
+}
+
+.movie-duration {
+  margin-left: 2%;
+}
+
+@media only screen and (max-width: 1700px) {
+  .edit-delete-div {
+    padding-left: 15%;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
   #todos-page {
     margin-right: 5%;
   }
@@ -607,6 +765,7 @@ label.movie-rating-small {
   }
 
   .edit-delete-div {
+    padding-left: 0;
     justify-content: right;
     padding-right: 10%;
   }
@@ -794,6 +953,15 @@ label.movie-rating-small {
   #add-movie-page {
     margin-right: 5% !important;
   }
+
+  .card.alert-modal-content {
+    background-color: #656565;
+    width: 32%;
+    margin: 15% 33%;
+    padding: 3% 3% 2% 2%;
+    color: #d6d6d6;
+    font-size: 17px;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -952,6 +1120,15 @@ label.movie-rating-small {
   .movie-actors {
     font-size: 16px;
   }
+
+  .card.alert-modal-content {
+    background-color: #656565;
+    width: 45%;
+    margin: 23% 28%;
+    padding: 3% 3% 2% 2%;
+    color: #d6d6d6;
+    font-size: 17px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -1035,6 +1212,15 @@ label.movie-rating-small {
 
   .close-btn {
     margin: 4% 84%;
+  }
+
+  .card.alert-modal-content {
+    background-color: #656565;
+    width: 55%;
+    margin: 25% 22%;
+    padding: 3% 3% 2% 2%;
+    color: #d6d6d6;
+    font-size: 17px;
   }
 }
 
@@ -1183,6 +1369,12 @@ label.movie-rating-small {
 
   .movie-title {
     font-size: 14px !important;
+  }
+
+  .card.alert-modal-content {
+    width: 65%;
+    margin: 40% 20%;
+    font-size: 17px;
   }
 }
 

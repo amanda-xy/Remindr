@@ -966,7 +966,6 @@ async function openModal(movieTitle) {
 }
   
 function toggleModal(modalToToggle) {
-    console.log(modalToToggle);
     modalToToggle.classList.toggle('hidden');
 }
 
